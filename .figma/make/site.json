@@ -1,0 +1,10 @@
+{
+  "description": "Monitors and controls an autonomous fire safety robot via a real-time dashboard with live video, sensor data, alerts, and manual override for rapid emergency response.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
