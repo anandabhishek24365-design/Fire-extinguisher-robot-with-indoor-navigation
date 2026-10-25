@@ -1,5 +1,9 @@
 {
+  "title": "FireBot Control Center",
   "description": "Monitors and controls an autonomous fire safety robot via a real-time dashboard with live video, sensor data, alerts, and manual override for rapid emergency response.",
+  "icons": {
+    "icon": "/src/assets/logo.png"
+  },
   "robots": {
     "index": false
   },
