@@ -1,5 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 @import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: #070B14;
@@ -31,9 +33,7 @@ html, body, #root {
 }
 
 body {
-  font-family: 'Space Grotesk', sans-serif;
-  background-color: #070B14;
-  color: #F0F6FF;
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -52,29 +52,82 @@ body {
 
 /* Light Premium Robotics Command Center Styling */
 .bg-light-app {
-  background-color: #F4F7FB;
+  background-color: #F8FAFC;
   background-image:
-    radial-gradient(at 0% 0%, rgba(37, 99, 235, 0.04) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.03) 0px, transparent 50%),
-    radial-gradient(at 50% 50%, rgba(249, 115, 22, 0.02) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.03) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(245, 158, 11, 0.03) 0px, transparent 50%),
+    radial-gradient(at 50% 100%, rgba(99, 102, 241, 0.02) 0px, transparent 50%);
 }
 
 .glass-card-light {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow: 0 10px 30px -5px rgba(148, 163, 184, 0.2), 0 4px 6px -2px rgba(148, 163, 184, 0.05);
-  border-radius: 20px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.04), 0 4px 10px -2px rgba(15, 23, 42, 0.02);
+  border-radius: 24px;
+}
+
+.dark .glass-card-light {
+  background: #121824;
+  border: 1px solid #1F293D;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  color: #F8FAFC;
 }
 
 .glass-card-sm-light {
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 4px 16px rgba(148, 163, 184, 0.12);
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+}
+
+.dark .glass-card-sm-light {
+  background: #182132;
+  border: 1px solid #222E46;
+  color: #F8FAFC;
+}
+
+.premium-card-light {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+  border-radius: 24px;
+  transition: all 0.25s ease;
+}
+
+.premium-card-light:hover {
+  box-shadow: 0 12px 32px -4px rgba(16, 185, 129, 0.08), 0 4px 12px -2px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+.premium-card-dark {
+  background: #121824;
+  border: 1px solid #1F293D;
+  box-shadow: 0 8px 32px -4px rgba(0, 0, 0, 0.45);
+  border-radius: 24px;
+  transition: all 0.25s ease;
+}
+
+.premium-card-dark:hover {
+  border-color: #2D3A54;
+  box-shadow: 0 12px 36px -4px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.1);
+  transform: translateY(-1px);
+}
+
+.glow-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
 }
 
 /* Soft Shapemorphism / Neumorphism Buttons */
@@ -96,6 +149,23 @@ body {
   background: #E2E8F0;
   box-shadow: inset 3px 3px 6px rgba(166, 180, 200, 0.4), inset -3px -3px 6px rgba(255, 255, 255, 0.9);
   transform: translateY(0);
+}
+
+.dark .neu-button {
+  background: #182132;
+  border: 1px solid #222E46;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -2px -2px 6px rgba(255, 255, 255, 0.04);
+  color: #60A5FA;
+}
+
+.dark .neu-button:hover {
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5), -1px -1px 4px rgba(255, 255, 255, 0.06);
+  color: #93C5FD;
+}
+
+.dark .neu-button:active, .dark .neu-button-pressed {
+  background: #1E293B;
+  box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.04);
 }
 
 /* Glass card base */

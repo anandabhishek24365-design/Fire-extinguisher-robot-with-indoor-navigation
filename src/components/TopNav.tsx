@@ -71,10 +71,8 @@ export default function TopNav({
       <div className="max-w-[1700px] mx-auto flex items-center justify-between gap-3">
         {/* Left: Brand Identity */}
         <div className="flex items-center gap-3 min-w-max">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-tr from-blue-500 to-cyan-400 p-0.5 shadow-md shadow-blue-500/30 flex items-center justify-center">
-            <div className="w-full h-full rounded-[14px] bg-[#070D19] flex items-center justify-center">
-              <Flame size={20} className="text-cyan-400 fill-cyan-400/30" />
-            </div>
+          <div className="w-10 h-10 rounded-2xl bg-white dark:bg-[#070D19] p-1 border border-slate-700/80 shadow-md shadow-orange-500/20 flex items-center justify-center">
+            <img src={logoSrc} alt="FireBot Logo" className="w-full h-full object-contain" />
           </div>
           <div>
             <div className="flex items-center gap-2">

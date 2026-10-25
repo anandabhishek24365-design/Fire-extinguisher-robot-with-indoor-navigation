@@ -41,18 +41,18 @@ export default function AboutView() {
             <Flame size={28} />
           </div>
           <div>
-            <span className="px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-[10px] font-black uppercase tracking-wider">
+            <span className="px-3 py-1 rounded-full bg-blue-100 dark:bg-blue-950/60 text-blue-700 dark:text-blue-300 text-[10px] font-black uppercase tracking-wider">
               Dashboard About Section
             </span>
-            <h1 className="text-2xl md:text-3xl font-black text-slate-900 tracking-tight mt-1">
+            <h1 className="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tight mt-1">
               About the Fire Safety Robot
             </h1>
           </div>
         </div>
 
         {/* Detailed System Narrative */}
-        <div className="flex flex-col gap-4 text-slate-700 font-medium text-xs md:text-sm leading-relaxed max-w-5xl">
-          <p className="text-slate-800 font-semibold text-sm md:text-base leading-snug">
+        <div className="flex flex-col gap-4 text-slate-700 dark:text-slate-300 font-medium text-xs md:text-sm leading-relaxed max-w-5xl">
+          <p className="text-slate-800 dark:text-slate-100 font-semibold text-sm md:text-base leading-snug">
             The Fire Safety Robot is an IoT-based mobile safety and monitoring system designed for both indoor and outdoor environments. It combines fire detection, gas-leak monitoring, environmental sensing, obstacle avoidance, live location tracking, automated emergency response, and cloud-based data visualization in one robotic platform.
           </p>
 
@@ -68,7 +68,7 @@ export default function AboutView() {
             For remote monitoring, the <strong>ESP32</strong> receives processed sensor data from the Arduino through serial communication, connects to a 2.4 GHz Wi-Fi network, and uploads important readings to <strong>ThingSpeak</strong>. The dashboard presents fire status, temperature, humidity, gas-level information, and obstacle-distance data in near real time, allowing users to monitor conditions and respond remotely.
           </p>
 
-          <p className="bg-slate-50 p-4 rounded-2xl border border-slate-200/80 text-xs text-slate-600">
+          <p className="bg-slate-50 dark:bg-[#182132] p-4 rounded-2xl border border-slate-200/80 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-300">
             The prototype demonstrated flame-alert operation at approximately <strong>50 cm to 1 m</strong>, obstacle detection at around <strong>20 cm</strong>, cloud updates with approximately <strong>15 seconds of latency</strong>, and outdoor GPS accuracy of approximately <strong>5 m</strong>. It is a low-cost proof-of-concept suitable for safety monitoring in homes, laboratories, warehouses, industrial facilities, and similar settings where early detection and rapid response can help reduce fire-related risks.
           </p>
         </div>
@@ -80,17 +80,17 @@ export default function AboutView() {
         <div className="lg:col-span-7 glass-card-light p-6 md:p-7 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="p-2 rounded-xl bg-blue-50 text-blue-600 border border-blue-200">
+              <div className="p-2 rounded-xl bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 border border-blue-200 dark:border-blue-800">
                 <ShieldAlert size={20} />
               </div>
-              <h2 className="text-lg font-black text-slate-900 tracking-tight">
+              <h2 className="text-lg font-black text-slate-900 dark:text-white tracking-tight">
                 Key Dashboard Features
               </h2>
             </div>
 
-            <ul className="flex flex-col gap-3 text-xs md:text-sm font-medium text-slate-700">
+            <ul className="flex flex-col gap-3 text-xs md:text-sm font-medium text-slate-700 dark:text-slate-300">
               {dashboardFeatures.map((feat, idx) => (
-                <li key={idx} className="flex items-start gap-3 bg-slate-50/80 p-3 rounded-xl border border-slate-200/70">
+                <li key={idx} className="flex items-start gap-3 bg-slate-50/80 dark:bg-[#182132]/70 p-3 rounded-xl border border-slate-200/70 dark:border-slate-800">
                   <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
                   <span>{feat}</span>
                 </li>
@@ -103,24 +103,24 @@ export default function AboutView() {
         <div className="lg:col-span-5 glass-card-light p-6 md:p-7 flex flex-col justify-between">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="p-2 rounded-xl bg-purple-50 text-purple-600 border border-purple-200">
+              <div className="p-2 rounded-xl bg-purple-50 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 border border-purple-200 dark:border-purple-800">
                 <Gauge size={20} />
               </div>
-              <h2 className="text-lg font-black text-slate-900 tracking-tight">
+              <h2 className="text-lg font-black text-slate-900 dark:text-white tracking-tight">
                 Prototype Performance Specs
               </h2>
             </div>
 
             <div className="grid grid-cols-2 gap-3">
               {prototypeMetrics.map((m, idx) => (
-                <div key={idx} className="glass-card-sm-light p-3.5 border border-slate-200/80 flex flex-col justify-between">
-                  <div className="flex items-center gap-2 text-slate-500 mb-1">
+                <div key={idx} className="glass-card-sm-light p-3.5 border border-slate-200/80 dark:border-slate-800 flex flex-col justify-between">
+                  <div className="flex items-center gap-2 text-slate-500 dark:text-slate-400 mb-1">
                     {m.icon}
                     <span className="text-[10px] font-extrabold uppercase tracking-wider block">
                       {m.label}
                     </span>
                   </div>
-                  <span className="text-base font-black text-slate-900">
+                  <span className="text-base font-black text-slate-900 dark:text-white">
                     {m.value}
                   </span>
                 </div>
@@ -132,22 +132,22 @@ export default function AboutView() {
 
       {/* System Specifications & Team Roster Grid */}
       <div className="glass-card-light p-6 md:p-7">
-        <h2 className="text-lg font-black text-slate-900 tracking-tight mb-4 flex items-center gap-2">
-          <Cpu size={20} className="text-blue-600" />
+        <h2 className="text-lg font-black text-slate-900 dark:text-white tracking-tight mb-4 flex items-center gap-2">
+          <Cpu size={20} className="text-blue-600 dark:text-cyan-400" />
           System Specifications & Team Roles
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {specs.map(s => (
             <div key={s.label} className="glass-card-sm-light p-3.5 flex items-center gap-3">
-              <div className="p-2 rounded-xl bg-slate-100 border border-slate-200 shrink-0">
+              <div className="p-2 rounded-xl bg-slate-100 dark:bg-[#182132] border border-slate-200 dark:border-slate-800 shrink-0">
                 {s.icon}
               </div>
               <div className="min-w-0">
                 <span className="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider block truncate">
                   {s.label}
                 </span>
-                <span className="text-xs font-extrabold text-slate-900 mt-0.5 block truncate">
+                <span className="text-xs font-extrabold text-slate-900 dark:text-white mt-0.5 block truncate">
                   {s.value}
                 </span>
               </div>
@@ -157,7 +157,7 @@ export default function AboutView() {
       </div>
 
       {/* Embedded Project Team & Engineering Roster */}
-      <div className="pt-6 border-t border-slate-200/80">
+      <div className="pt-6 border-t border-slate-200/80 dark:border-slate-800">
         <TeamView />
       </div>
     </div>

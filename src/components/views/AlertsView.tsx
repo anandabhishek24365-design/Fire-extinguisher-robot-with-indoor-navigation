@@ -121,23 +121,23 @@ export default function AlertsView() {
       {/* Title & Top KPIs */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-black text-slate-900 tracking-tight">
+          <h1 className="text-2xl font-black text-slate-900 dark:text-white tracking-tight">
             Emergency Incident Alert Center
           </h1>
-          <p className="text-xs font-semibold text-slate-500 mt-1">
+          <p className="text-xs font-semibold text-slate-500 dark:text-slate-400 mt-1">
             Real-time safety notifications, sensor warnings and automated emergency dispatch logs
           </p>
         </div>
 
         {/* Quick KPI Badges */}
         <div className="flex items-center gap-2">
-          <div className="flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-red-50 border border-red-200 text-red-700 text-xs font-bold">
-            <Flame size={16} className="text-red-600" />
-            <span>Critical: <strong className="font-black text-slate-900">{criticalCount}</strong></span>
+          <div className="flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-900 text-red-700 dark:text-red-300 text-xs font-bold">
+            <Flame size={16} className="text-red-600 dark:text-red-400" />
+            <span>Critical: <strong className="font-black text-slate-900 dark:text-white">{criticalCount}</strong></span>
           </div>
-          <div className="flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-amber-50 border border-amber-200 text-amber-700 text-xs font-bold">
-            <AlertTriangle size={16} className="text-amber-600" />
-            <span>Warnings: <strong className="font-black text-slate-900">{warningCount}</strong></span>
+          <div className="flex items-center gap-2 px-3.5 py-2 rounded-2xl bg-amber-50 dark:bg-amber-950/40 border border-amber-200 dark:border-amber-900 text-amber-700 dark:text-amber-300 text-xs font-bold">
+            <AlertTriangle size={16} className="text-amber-600 dark:text-amber-400" />
+            <span>Warnings: <strong className="font-black text-slate-900 dark:text-white">{warningCount}</strong></span>
           </div>
         </div>
       </div>
@@ -157,8 +157,8 @@ export default function AlertsView() {
               onClick={() => setSeverityFilter(f.id as any)}
               className={`px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer ${
                 severityFilter === f.id
-                  ? 'bg-blue-600 text-white shadow-sm'
-                  : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                  ? 'bg-emerald-600 text-white shadow-sm'
+                  : 'text-slate-700 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800'
               }`}
             >
               {f.label}
@@ -174,7 +174,7 @@ export default function AlertsView() {
             placeholder="Search alerts by location, sensor, or description..."
             value={searchQuery}
             onChange={e => setSearchQuery(e.target.value)}
-            className="w-full pl-10 pr-4 py-2 rounded-xl bg-white border border-slate-200 text-xs font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100"
+            className="w-full pl-10 pr-4 py-2 rounded-xl bg-white dark:bg-[#141A26] border border-slate-200 dark:border-slate-800 text-xs font-semibold text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-slate-500 focus:outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 dark:focus:ring-emerald-950/40"
           />
         </div>
       </div>
@@ -184,10 +184,10 @@ export default function AlertsView() {
         {filteredAlerts.length === 0 ? (
           <div className="glass-card-light p-12 text-center flex flex-col items-center justify-center">
             <CheckCircle2 size={42} className="text-emerald-500 mb-3" />
-            <h3 className="text-base font-extrabold text-slate-800">
+            <h3 className="text-base font-extrabold text-slate-800 dark:text-white">
               No Alerts Match Your Filter
             </h3>
-            <p className="text-xs text-slate-500 mt-1">
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
               All monitored zones and sensor thresholds are currently within safe limits.
             </p>
           </div>
@@ -200,7 +200,7 @@ export default function AlertsView() {
                   ? 'border-l-red-600'
                   : alert.severity === 'warning'
                   ? 'border-l-amber-500'
-                  : 'border-l-blue-500'
+                  : 'border-l-emerald-500'
               }`}
             >
               {/* Left Content */}
@@ -208,10 +208,10 @@ export default function AlertsView() {
                 <div
                   className={`p-3 rounded-2xl border ${
                     alert.severity === 'critical'
-                      ? 'bg-red-50 border-red-200 text-red-600'
+                      ? 'bg-red-50 dark:bg-red-950/40 border-red-200 dark:border-red-900 text-red-600 dark:text-red-400'
                       : alert.severity === 'warning'
-                      ? 'bg-amber-50 border-amber-200 text-amber-600'
-                      : 'bg-blue-50 border-blue-200 text-blue-600'
+                      ? 'bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-900 text-amber-600 dark:text-amber-400'
+                      : 'bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-900 text-emerald-600 dark:text-emerald-400'
                   }`}
                 >
                   {alert.severity === 'critical' ? (
@@ -231,23 +231,23 @@ export default function AlertsView() {
                           ? 'bg-red-600 text-white border-red-500'
                           : alert.severity === 'warning'
                           ? 'bg-amber-500 text-white border-amber-400'
-                          : 'bg-blue-600 text-white border-blue-500'
+                          : 'bg-emerald-600 text-white border-emerald-500'
                       }`}
                     >
                       {alert.severity}
                     </span>
 
-                    <h3 className="text-sm font-extrabold text-slate-900">
+                    <h3 className="text-sm font-extrabold text-slate-900 dark:text-white">
                       {alert.sensor}
                     </h3>
 
-                    <span className="flex items-center gap-1 text-xs font-bold text-slate-500">
-                      <MapPin size={12} className="text-blue-600" />
+                    <span className="flex items-center gap-1 text-xs font-bold text-slate-600 dark:text-slate-400">
+                      <MapPin size={12} className="text-emerald-600 dark:text-emerald-400" />
                       {alert.location}
                     </span>
                   </div>
 
-                  <p className="text-xs font-medium text-slate-600 mt-1.5">
+                  <p className="text-xs font-medium text-slate-600 dark:text-slate-300 mt-1.5">
                     {alert.description}
                   </p>
 
@@ -257,7 +257,7 @@ export default function AlertsView() {
                       {alert.timestamp}
                     </span>
                     <span>•</span>
-                    <span className="uppercase">Status: <strong>{alert.status}</strong></span>
+                    <span className="uppercase">Status: <strong className="text-slate-700 dark:text-slate-200">{alert.status}</strong></span>
                   </div>
                 </div>
               </div>
@@ -267,7 +267,7 @@ export default function AlertsView() {
                 {alert.status === 'active' && (
                   <button
                     onClick={() => handleAcknowledge(alert.id)}
-                    className="px-3.5 py-2 rounded-xl bg-blue-50 hover:bg-blue-100 border border-blue-200 text-blue-700 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
+                    className="px-3.5 py-2 rounded-xl bg-blue-50 dark:bg-blue-950/40 hover:bg-blue-100 dark:hover:bg-blue-900/50 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 text-xs font-bold transition-all flex items-center gap-1.5 cursor-pointer"
                   >
                     <Check size={14} />
                     Acknowledge
