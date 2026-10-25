@@ -5,7 +5,7 @@ import Dashboard from './pages/Dashboard';
 type Screen = 'login' | 'dashboard';
 
 export default function App() {
-  const [screen, setScreen] = useState<Screen>('dashboard');
+  const [screen, setScreen] = useState<Screen>('login');
 
   return (
     <div style={{ height: '100%' }}>
