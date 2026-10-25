@@ -596,7 +596,17 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
             <form className="sign-in-form" onSubmit={onSubmit}>
               <div className="form-brand-header">
                 <div className="brand-logo-frame">
-                  <img src={logoSrc} alt="FireBot Logo" />
+                  <img
+                    src={logoSrc}
+                    alt="FireBot Logo"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.dataset.fallback) {
+                        target.dataset.fallback = "true";
+                        target.src = "/logo.png";
+                      }
+                    }}
+                  />
                   <span className="brand-ping-dot" />
                 </div>
                 <div className="brand-text-wrap">
@@ -632,7 +642,17 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
             <form className="sign-up-form" onSubmit={onSubmit}>
               <div className="form-brand-header">
                 <div className="brand-logo-frame">
-                  <img src={logoSrc} alt="FireBot Logo" />
+                  <img
+                    src={logoSrc}
+                    alt="FireBot Logo"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.dataset.fallback) {
+                        target.dataset.fallback = "true";
+                        target.src = "/logo.png";
+                      }
+                    }}
+                  />
                   <span className="brand-ping-dot" />
                 </div>
                 <div className="brand-text-wrap">
@@ -680,6 +700,13 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
                 <img
                   src={logoSrc}
                   alt="FireBot Sentinel System"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = "true";
+                      target.src = "/logo.png";
+                    }
+                  }}
                 />
                 <span className="panel-online-badge" />
               </div>
@@ -704,6 +731,13 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
                 <img
                   src={logoSrc}
                   alt="FireBot Sentinel System"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = "true";
+                      target.src = "/logo.png";
+                    }
+                  }}
                 />
                 <span className="panel-online-badge" />
               </div>

@@ -164,6 +164,13 @@ export default function TeamView() {
                   src={projectManager.photo}
                   alt={projectManager.name}
                   className="relative w-28 h-28 rounded-xl object-cover border-4 border-white dark:border-slate-800 shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = 'true';
+                      target.src = '/assets/gunjan-jangir.jpg';
+                    }
+                  }}
                 />
                 <span className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-black text-[8px] uppercase tracking-wider rounded-full border-2 border-white shadow">
                   {projectManager.badge}
@@ -192,6 +199,13 @@ export default function TeamView() {
                   src={codeDeveloper.photo}
                   alt={codeDeveloper.name}
                   className="relative w-28 h-28 rounded-xl object-cover border-4 border-white dark:border-slate-800 shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = 'true';
+                      target.src = '/assets/archit-gupta.jpg';
+                    }
+                  }}
                 />
                 <span className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-black text-[8px] uppercase tracking-wider rounded-full border-2 border-white shadow">
                   {codeDeveloper.badge}
@@ -220,6 +234,13 @@ export default function TeamView() {
                   src={abhishekDesigner.photo}
                   alt={abhishekDesigner.name}
                   className="relative w-28 h-28 rounded-xl object-cover border-4 border-white dark:border-slate-800 shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = 'true';
+                      target.src = '/assets/abhishek-anand.jpg';
+                    }
+                  }}
                 />
                 <span className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-teal-600 to-cyan-600 text-white font-black text-[8px] uppercase tracking-wider rounded-full border-2 border-white shadow">
                   {abhishekDesigner.badge}
@@ -248,6 +269,13 @@ export default function TeamView() {
                   src={abhinavDesigner.photo}
                   alt={abhinavDesigner.name}
                   className="relative w-28 h-28 rounded-xl object-cover border-4 border-white dark:border-slate-800 shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = 'true';
+                      target.src = '/assets/abhinav-dahiya.jpg';
+                    }
+                  }}
                 />
                 <span className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-black text-[8px] uppercase tracking-wider rounded-full border-2 border-white shadow">
                   {abhinavDesigner.badge}
@@ -276,6 +304,13 @@ export default function TeamView() {
                   src={sahajtaDeployer.photo}
                   alt={sahajtaDeployer.name}
                   className="relative w-28 h-28 rounded-xl object-cover border-4 border-white dark:border-slate-800 shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = 'true';
+                      target.src = '/assets/sahajta-singh.jpg';
+                    }
+                  }}
                 />
                 <span className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-sky-600 to-blue-600 text-white font-black text-[8px] uppercase tracking-wider rounded-full border-2 border-white shadow">
                   {sahajtaDeployer.badge}
@@ -304,6 +339,13 @@ export default function TeamView() {
                   src={hardwareIntegrator.photo}
                   alt={hardwareIntegrator.name}
                   className="relative w-28 h-28 rounded-xl object-cover border-4 border-white dark:border-slate-800 shadow-lg transition-transform duration-300 group-hover:scale-105"
+                  onError={(e) => {
+                    const target = e.currentTarget;
+                    if (!target.dataset.fallback) {
+                      target.dataset.fallback = 'true';
+                      target.src = '/assets/daksh-srivastava.jpg';
+                    }
+                  }}
                 />
                 <span className="absolute -bottom-2 -right-2 px-2 py-0.5 bg-gradient-to-r from-orange-600 to-amber-600 text-white font-black text-[8px] uppercase tracking-wider rounded-full border-2 border-white shadow">
                   {hardwareIntegrator.badge}
@@ -351,6 +393,14 @@ export default function TeamView() {
                     src={m.photo}
                     alt={m.name}
                     className="w-16 h-16 rounded-2xl object-cover border-2 border-white dark:border-slate-800 shadow-md group-hover:scale-105 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.dataset.fallback) {
+                        target.dataset.fallback = 'true';
+                        const slug = m.name.toLowerCase().replace(/\s+/g, '-');
+                        target.src = `/assets/${slug}.jpg`;
+                      }
+                    }}
                   />
                   <span className="absolute -bottom-1 -right-1 p-0.5 bg-emerald-500 text-white rounded-full border border-white dark:border-slate-800 shadow">
                     <CheckCircle2 size={10} />

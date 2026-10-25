@@ -1105,16 +1105,37 @@ export default function TasksDashboardView({
                 src={abhishekImg}
                 alt="Abhishek Anand"
                 className="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-[#121824] shadow-md ring-2 ring-blue-500/30"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.dataset.fallback) {
+                    target.dataset.fallback = 'true';
+                    target.src = '/assets/abhishek-anand.jpg';
+                  }
+                }}
               />
               <img
                 src={dakshImg}
                 alt="Daksh Srivastava"
                 className="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-[#121824] shadow-md ring-2 ring-emerald-500/30"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.dataset.fallback) {
+                    target.dataset.fallback = 'true';
+                    target.src = '/assets/daksh-srivastava.jpg';
+                  }
+                }}
               />
               <img
                 src={gunjanImg}
                 alt="Gunjan Jangir"
                 className="w-10 h-10 rounded-full object-cover border-2 border-white dark:border-[#121824] shadow-md ring-2 ring-pink-500/30"
+                onError={(e) => {
+                  const target = e.currentTarget;
+                  if (!target.dataset.fallback) {
+                    target.dataset.fallback = 'true';
+                    target.src = '/assets/gunjan-jangir.jpg';
+                  }
+                }}
               />
               <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-purple-700 via-indigo-700 to-pink-600 text-white border-2 border-white dark:border-[#121824] flex items-center justify-center text-xs font-black shadow-lg shadow-purple-500/30">
                 +12

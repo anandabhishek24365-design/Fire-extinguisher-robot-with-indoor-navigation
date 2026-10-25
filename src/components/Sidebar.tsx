@@ -136,6 +136,13 @@ export default function Sidebar({
                     src={logoSrc}
                     alt="FireBot Logo"
                     className="w-full h-full object-contain"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.dataset.fallback) {
+                        target.dataset.fallback = 'true';
+                        target.src = '/logo.png';
+                      }
+                    }}
                   />
                 </div>
                 <span className="absolute -bottom-1 -right-1 w-3 h-3 rounded-full bg-emerald-500 border-2 border-white dark:border-[#0B0F19] animate-pulse" />

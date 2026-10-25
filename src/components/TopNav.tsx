@@ -72,7 +72,18 @@ export default function TopNav({
         {/* Left: Brand Identity */}
         <div className="flex items-center gap-3 min-w-max">
           <div className="w-10 h-10 rounded-2xl bg-white dark:bg-[#070D19] p-1 border border-slate-700/80 shadow-md shadow-orange-500/20 flex items-center justify-center">
-            <img src={logoSrc} alt="FireBot Logo" className="w-full h-full object-contain" />
+            <img
+              src={logoSrc}
+              alt="FireBot Logo"
+              className="w-full h-full object-contain"
+              onError={(e) => {
+                const target = e.currentTarget;
+                if (!target.dataset.fallback) {
+                  target.dataset.fallback = 'true';
+                  target.src = '/logo.png';
+                }
+              }}
+            />
           </div>
           <div>
             <div className="flex items-center gap-2">
