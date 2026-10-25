@@ -510,7 +510,7 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
 
         @media (max-width: 870px) {
           .container {
-            min-height: 800px;
+            min-height: 780px;
             height: 100vh;
           }
           .signin-signup {
@@ -522,6 +522,70 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
           .signin-signup,
           .container.sign-up-mode .signin-signup {
             left: 50%;
+          }
+          .container.sign-up-mode .signin-signup {
+            top: 3%;
+            transform: translate(-50%, 0);
+          }
+          .input-field {
+            height: 44px;
+            margin: 4px 0;
+            max-width: 320px;
+          }
+          .input-field i {
+            font-size: 1rem;
+          }
+          .input-field input {
+            font-size: 0.9rem;
+          }
+          .title {
+            font-size: 1.55rem;
+            margin-bottom: 2px;
+          }
+          .subtitle {
+            font-size: 0.78rem;
+            margin-bottom: 6px;
+          }
+          .btn {
+            height: 40px;
+            font-size: 0.82rem;
+            margin: 8px 0 4px 0;
+            width: 150px;
+          }
+          .social-text {
+            padding: 0.25rem 0;
+            font-size: 0.78rem;
+          }
+          .social-media {
+            gap: 10px;
+          }
+          .social-icon {
+            width: 38px;
+            height: 38px;
+            font-size: 0.95rem;
+          }
+          .form-brand-header {
+            padding: 4px 10px;
+            margin-top: 4px;
+            margin-bottom: 6px;
+            gap: 8px;
+            max-width: 320px;
+          }
+          .brand-logo-frame {
+            width: 34px;
+            height: 34px;
+            border-radius: 10px;
+            padding: 2px;
+          }
+          .brand-title-text {
+            font-size: 1.05rem;
+          }
+          .brand-badge-pill {
+            font-size: 0.58rem;
+            padding: 1px 6px;
+          }
+          .brand-subtext {
+            font-size: 0.64rem;
           }
           .panels-container {
             grid-template-columns: 1fr;
@@ -535,17 +599,17 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
           .left-panel {
             grid-row: 1 / 2;
             justify-content: flex-start;
-            padding: 1.25rem 1rem 0.5rem 1rem;
+            padding: 1rem 1rem 0.5rem 1rem;
           }
           .right-panel {
             grid-row: 3 / 4;
             justify-content: flex-end;
-            padding: 0.5rem 1rem 1.25rem 1rem;
+            padding: 0.5rem 1rem 1rem 1rem;
           }
           .panel .content {
             padding: 0;
             margin: 0 auto;
-            max-width: 290px;
+            max-width: 280px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -554,30 +618,30 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
             transition-delay: 0.8s;
           }
           .panel-logo-card {
-            width: 66px;
-            height: 66px;
-            border-radius: 18px;
-            margin-bottom: 6px;
+            width: 56px;
+            height: 56px;
+            border-radius: 16px;
+            margin-bottom: 4px;
             padding: 5px;
           }
           .panel h3 {
-            font-size: 1.2rem;
-            margin: 0 0 3px 0;
+            font-size: 1.15rem;
+            margin: 0 0 2px 0;
             font-weight: 800;
             color: #ffffff;
             line-height: 1.2;
           }
           .panel p {
-            font-size: 0.74rem;
-            line-height: 1.4;
-            padding: 0 0 0.65rem 0;
-            max-width: 260px;
+            font-size: 0.72rem;
+            line-height: 1.35;
+            padding: 0 0 0.55rem 0;
+            max-width: 255px;
             color: rgba(255, 255, 255, 0.95);
           }
           .btn.transparent {
-            width: 132px;
-            height: 38px;
-            font-size: 0.78rem;
+            width: 128px;
+            height: 36px;
+            font-size: 0.76rem;
             font-weight: 800;
             color: #ffffff !important;
             background: rgba(255, 255, 255, 0.22);
@@ -597,7 +661,7 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
           }
           .container.sign-up-mode:before {
             transform: translate(-50%, 100%);
-            bottom: 33%;
+            bottom: 30%;
             left: 50%;
             right: initial;
           }
@@ -610,57 +674,52 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
           .right-panel .content {
             transform: translateY(300px);
           }
-          .container.sign-up-mode .signin-signup {
-            top: 5%;
-            transform: translate(-50%, 0);
-          }
         }
 
         @media (max-width: 570px) {
           .container {
-            min-height: 780px;
+            min-height: 750px;
           }
           .container:before {
-            bottom: 66%;
+            bottom: 67%;
             left: 50%;
           }
           .container.sign-up-mode:before {
-            bottom: 34%;
+            bottom: 29%;
             left: 50%;
           }
           .signin-signup {
             top: 96%;
           }
-          .form-brand-header {
-            margin-top: 6px;
-            margin-bottom: 8px;
+          .container.sign-up-mode .signin-signup {
+            top: 3%;
           }
           form {
-            padding: 0 1.25rem;
+            padding: 0 1rem;
           }
           .panel .content {
             padding: 0;
-            max-width: 265px;
+            max-width: 250px;
           }
           .panel-logo-card {
-            width: 62px;
-            height: 62px;
-            border-radius: 16px;
-            margin-bottom: 6px;
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            margin-bottom: 4px;
           }
           .panel h3 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             margin: 0 0 2px 0;
           }
           .panel p {
-            font-size: 0.72rem;
-            padding: 0 0 0.6rem 0;
-            max-width: 250px;
+            font-size: 0.7rem;
+            padding: 0 0 0.5rem 0;
+            max-width: 240px;
           }
           .btn.transparent {
-            width: 128px;
-            height: 36px;
-            font-size: 0.76rem;
+            width: 124px;
+            height: 35px;
+            font-size: 0.74rem;
           }
         }
       `}</style>
@@ -793,7 +852,12 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
               <button
                 type="button"
                 className="btn transparent"
-                onClick={() => setIsSignUp(true)}
+                onClick={() => {
+                  setIsSignUp(true);
+                  if (typeof window !== "undefined") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
               >
                 Sign up
               </button>
@@ -821,7 +885,12 @@ export default function AuthSwitch({ onLogin, onSignUp }: AuthSwitchProps = {}) 
               <button
                 type="button"
                 className="btn transparent"
-                onClick={() => setIsSignUp(false)}
+                onClick={() => {
+                  setIsSignUp(false);
+                  if (typeof window !== "undefined") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
               >
                 Sign in
               </button>
